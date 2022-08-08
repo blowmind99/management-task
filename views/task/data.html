@@ -1,0 +1,23 @@
+<!--iterasi data mahasiswa taskcontroller-->
+{{ $nomor := 0 }}
+{{ range .task }}
+    <tr>
+        <!--menampilkan nomer tabel-->
+        <!--memanggil fungsi increment taskcontroller-->
+        {{ $nomor = increment $nomor 1 }}
+        <td>{{ $nomor  }}</td>
+        <!---------------------->
+        <td>{{ .Task }}</td>
+        <td>{{ .Assignee }}</td>
+        <td>{{ .Deadline }}</td>
+        <td>
+            <button type="button" class="btn btn-outline-success btn-sm">
+                Mark as Done
+            </button>
+            <button type="button" class="btn btn-primary btn-sm">Edit</button>
+            <button type="button" class="btn btn-danger btn-sm">Delete</button>
+
+
+        </td>
+    </tr>
+{{ end }}
